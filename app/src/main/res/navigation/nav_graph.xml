@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/breaking_news">
+
+    <fragment
+        android:id="@+id/breaking_news"
+        android:name="com.example.newsapp.ui.fragments.breaking_news"
+        android:label="fragment_breaking_news"
+        tools:layout="@layout/fragment_breaking_news" >
+        <action
+            android:id="@+id/action_breaking_news_to_news_webview"
+            app:destination="@id/news_webview"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/saved_news"
+        android:name="com.example.newsapp.ui.fragments.saved_news"
+        android:label="fragment_saved_news"
+        tools:layout="@layout/fragment_saved_news" >
+        <action
+            android:id="@+id/action_saved_news_to_news_webview"
+            app:destination="@id/news_webview"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/search_news"
+        android:name="com.example.newsapp.ui.fragments.search_news"
+        android:label="fragment_search_news"
+        tools:layout="@layout/fragment_search_news" >
+        <action
+            android:id="@+id/action_search_news_to_news_webview"
+            app:destination="@id/news_webview"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/news_webview"
+        android:name="com.example.newsapp.ui.fragments.news_webview"
+        android:label="fragment_news_webview"
+        tools:layout="@layout/fragment_news_webview" >
+        <argument
+            android:name="Article"
+            app:argType="com.example.newsapp.util.Article" />
+    </fragment>
+</navigation>
